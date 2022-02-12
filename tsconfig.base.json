@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@winsoft/orders": ["libs/orders/src/index.ts"],
+      "@winsoft/products": ["libs/products/src/index.ts"],
+      "@winsoft/ui": ["libs/ui/src/index.ts"],
+      "@winsoft/users": ["libs/users/src/index.ts"],
+      "@winsoft/userss": ["libs/userss/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

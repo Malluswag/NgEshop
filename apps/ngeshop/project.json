@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "root": "apps/ngeshop",
+  "sourceRoot": "apps/ngeshop/src",
+  "prefix": "winsoft",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ngeshop",
+        "index": "apps/ngeshop/src/index.html",
+        "main": "apps/ngeshop/src/main.ts",
+        "polyfills": "apps/ngeshop/src/polyfills.ts",
+        "tsConfig": "apps/ngeshop/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/ngeshop/src/favicon.ico", "apps/ngeshop/src/assets"],
+        "styles": ["apps/ngeshop/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ngeshop/src/environments/environment.ts",
+              "with": "apps/ngeshop/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ngeshop:build:production"
+        },
+        "development": {
+          "browserTarget": "ngeshop:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ngeshop:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/ngeshop/src/**/*.ts",
+          "apps/ngeshop/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ngeshop"],
+      "options": {
+        "jestConfig": "apps/ngeshop/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

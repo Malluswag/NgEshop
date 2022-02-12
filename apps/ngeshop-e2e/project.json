@@ -1,0 +1,28 @@
+{
+  "root": "apps/ngeshop-e2e",
+  "sourceRoot": "apps/ngeshop-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ngeshop-e2e/cypress.json",
+        "devServerTarget": "ngeshop:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ngeshop:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ngeshop-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ngeshop"]
+}
