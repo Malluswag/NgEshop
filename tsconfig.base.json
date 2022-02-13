@@ -19,7 +19,8 @@
       "@winsoft/products": ["libs/products/src/index.ts"],
       "@winsoft/ui": ["libs/ui/src/index.ts"],
       "@winsoft/users": ["libs/users/src/index.ts"],
-      "@winsoft/userss": ["libs/userss/src/index.ts"]
+      "@winsoft/userss": ["libs/userss/src/index.ts"],
+      "@env/*" : ["environments/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
