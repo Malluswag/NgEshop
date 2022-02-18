@@ -22,12 +22,12 @@ export class CheckoutPageComponent implements OnInit {
     private usersService: UsersService,
     private formBuilder: FormBuilder,
     private cartService: CartService,
-    private ordersService: OrdersService
+    private ordersService: OrdersService,
     ) {}
   checkoutFormGroup: FormGroup;
   isSubmitted = false;
   orderItems: OrderItem[] = [];
-  userId ="61fbd95c4742b0f988e3157b";
+  userId = "620d42cb7e2db7f272d50311";
   countries = [];
 
   ngOnInit(): void {
@@ -83,7 +83,8 @@ export class CheckoutPageComponent implements OnInit {
       country:this.checkoutForm.country.value,
       phone: this.checkoutForm.phone.value,
       status: 0,
-      user: this.userId
+      user: this.userId,
+      dateOrdered: `${Date.now()}`
     };
 
     this.ordersService.createOrder(order).subscribe(()=>{

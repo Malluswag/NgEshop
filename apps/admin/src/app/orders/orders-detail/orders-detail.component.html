@@ -7,6 +7,12 @@
           <h5>Order Id</h5>
           <p>{{ order.id }}</p>
         </div>
+
+        <div class="p-col-4">
+          <h5>Order Date</h5>
+          <p>{{ order.dateOrdered | date: 'short' }}</p>
+        </div>
+
         <div class="p-col-4">
           <h5>Order Status</h5>
           <p-dropdown
@@ -18,7 +24,8 @@
           >
           </p-dropdown>
         </div>
-         <div class="p-col-4">
+
+        <div class="p-col-4">
           <h5>Order Total Price</h5>
           <p>{{ order.totalPrice | currency }}</p>
         </div>

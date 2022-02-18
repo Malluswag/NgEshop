@@ -157,6 +157,7 @@ const routes: Routes = [
   exports: [
     ShellComponent,
     ToastModule,
+    TagModule,
   ],
 })
 export class AppModule {}
